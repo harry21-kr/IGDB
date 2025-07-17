@@ -1,4 +1,4 @@
-const getTwitchTokenCookie = async () => {
+export const getTwitchTokenCookie = async () => {
   if (typeof window === "undefined")
     throw new Error("This function must be used in client side");
 
@@ -8,5 +8,3 @@ const getTwitchTokenCookie = async () => {
 
   return res;
 };
-
-export default getTwitchTokenCookie;

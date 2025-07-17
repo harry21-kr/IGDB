@@ -3,10 +3,10 @@
 import { getTwitchTokenCookie } from "@/api/route";
 import { useEffect } from "react";
 
-const Home = () => {
+const AppInitializer = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     getTwitchTokenCookie();
   }, []);
-  return <div></div>;
+  return <>{children}</>;
 };
-export default Home;
+export default AppInitializer;
