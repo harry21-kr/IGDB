@@ -1,9 +1,8 @@
 import getTwitchOauthToken from "@/api/IGDB/getTwitchOauthToken";
 import { cookies } from "next/headers";
 
+// /api/cookies
 export const GET = async () => {
-  const { access_token, expires_in } = await getTwitchOauthToken();
-
   const cookieStore = await cookies();
 
   const legacyCookie = cookieStore.get("twitchToken");
@@ -11,6 +10,8 @@ export const GET = async () => {
   if (legacyCookie?.value) {
     return Response.json({ message: "Cookie already set" });
   }
+
+  const { access_token, expires_in } = await getTwitchOauthToken();
 
   cookieStore.set("twitchToken", access_token, {
     httpOnly: true,
