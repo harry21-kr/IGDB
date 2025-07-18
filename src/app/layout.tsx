@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Pixelify_Sans } from "next/font/google";
+import { Chiron_Hei_HK } from "next/font/google";
 import "./globals.css";
 
-const pixelifySans = Pixelify_Sans({
-  variable: "--font-pixelify-sans",
+const chironHeiHK = Chiron_Hei_HK({
+  variable: "--font-chiron-hei-hk",
   subsets: ["latin"],
 });
 
@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${pixelifySans.className} antialiased`}>
+      <body className={`${chironHeiHK.className} antialiased`}>
         <div className="flex flex-col items-center min-h-screen">
           <main className="w-full max-w-screen-xl">{children}</main>
         </div>
