@@ -6,6 +6,6 @@ interface ThemeItemProps {
 }
 
 const ThemeItem = ({ theme }: ThemeItemProps) => {
-  return <Button variant="outline">{theme.name}</Button>;
+  return <Button>{theme.name}</Button>;
 };
 export default ThemeItem;
